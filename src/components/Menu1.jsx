@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import '../App.css';
 import Swal from 'sweetalert2';
+import 'font-awesome/css/font-awesome.min.css';
 
-function Menu1() {
-  const [cart, setCart] = useState([]); // Cart state
-  const navigate = useNavigate(); // Initialize useNavigate
-
+function Menu1({ addToCart }) {
+  const [selectedSize, setSelectedSize] = useState('Medium');
+  const [selectedTemperature, setSelectedTemperature] = useState('Hot');
+  
   const menuItems = [
     {
       name: 'Espresso',
@@ -33,10 +34,6 @@ function Menu1() {
     },
   ];
 
-  const addToCart = (item) => {
-    setCart((prevCart) => [...prevCart, item]);
-  };
-
   const handleCardClick = (item) => {
     Swal.fire({
       title: item.name,
@@ -52,8 +49,8 @@ function Menu1() {
         popup: 'swal-popup',
       },
       preConfirm: () => {
-        const size = 'Medium'; // Default size
-        const temperature = 'Hot'; // Default temperature
+        const size = selectedSize;
+        const temperature = selectedTemperature;
 
         const itemWithSizeAndTemperature = {
           ...item,
@@ -118,15 +115,7 @@ function Menu1() {
   return (
     <section className="menu py-5">
       <div className="container">
-        <div className="d-flex justify-content-between align-items-center mb-4">
-          <h2>Our Coffee Menu</h2>
-          <button
-            className="btn btn-outline-dark cart-btn"
-            onClick={() => navigate('/cart', { state: { cart } })} // Redirect with cart data
-          >
-            <i className="fas fa-shopping-cart"></i> {cart.length > 0 ? `(${cart.length})` : ''}
-          </button>
-        </div>
+        <h2 className="text-center mb-5">Our Coffee Menu</h2>
         <div className="row">
           {menuItems.map((item, index) => (
             <div key={index} className="col-md-3 mb-4">
@@ -144,16 +133,16 @@ function Menu1() {
                 <h4 className="text-center">{item.name}</h4>
                 <p className="text-muted text-center" style={{ fontSize: '0.9rem' }}>{item.description}</p>
                 <div className="d-flex justify-content-between align-items-center mt-3">
-                  <button
-                    className="btn btn-buy btn-sm"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleSizeAndTemperatureSelection(item);
-                    }}
-                    style={{ width: '100%' }}
-                  >
-                    Buy
-                  </button>
+                <button
+                  className="btn btn-buy btn-sm"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleSizeAndTemperatureSelection(item);
+                  }}
+                  style={{ width: '100%' }}
+                >
+                  Buy
+                </button>
                 </div>
               </div>
             </div>

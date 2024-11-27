@@ -1,6 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import 'font-awesome/css/font-awesome.min.css';
+
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll'; // Importing Link from react-scroll for smooth scrolling
 import { useState } from 'react';
 import Home from './components/Home.jsx';
 import Menu1 from './components/Menu1.jsx';
@@ -13,9 +16,9 @@ import Cart from './components/Cart.jsx';
 import BreakfastReservation from './components/Reservation.jsx';
 
 function App() {
-  const [cart, setCart] = useState([]); // Manage cart state
+  const [cart, setCart] = useState([]);
 
-  // Function to add items to the cart
+  // Function to update cart
   const addToCart = (item) => {
     setCart((prevCart) => [...prevCart, item]);
   };
@@ -34,19 +37,19 @@ function App() {
             <div className="d-flex justify-content-start">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
+                  <ScrollLink className="nav-link" to="home" smooth={true} duration={500}>
                     Home
-                  </Link>
+                  </ScrollLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/services">
+                  <ScrollLink className="nav-link" to="menu" smooth={true} duration={500}>
                     Menu
-                  </Link>
+                  </ScrollLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Gallery">
+                  <ScrollLink className="nav-link" to="gallery" smooth={true} duration={500}>
                     Gallery
-                  </Link>
+                  </ScrollLink>
                 </li>
               </ul>
             </div>
@@ -62,18 +65,25 @@ function App() {
             <div className="d-flex justify-content-end align-items-center">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/aboutus">
+                  <ScrollLink className="nav-link" to="aboutus" smooth={true} duration={500}>
                     About us
-                  </Link>
+                  </ScrollLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/contact">
+                  <ScrollLink className="nav-link" to="contact" smooth={true} duration={500}>
                     Contact
-                  </Link>
+                  </ScrollLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn btn-light ms-3" to="/reservation">
+                  <ScrollLink className="btn btn-light ms-3" to="reservation" smooth={true} duration={500}>
                     Book A Table
+                  </ScrollLink>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/cart">
+                    <button className="btn btn-outline-dark ms-3">
+                      <i className="fas fa-shopping-cart"></i> ({cart.length})
+                    </button>
                   </Link>
                 </li>
               </ul>
@@ -83,23 +93,41 @@ function App() {
 
         {/* Routes */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/services"
-            element={<Menu1 addToCart={addToCart} />}
-          />
+          <Route path="/menu1" element={<Menu1 addToCart={addToCart} />} />
+          <Route path="/reservation" element={<BreakfastReservation />} /> 
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/aboutus" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart cart={cart} />} />
-          <Route
-            path="/checkout"
-            element={<Checkout cart={cart} clearCart={clearCart} />}
-          />
-          <Route path="/reservation" element={<BreakfastReservation />} />
+          <Route path="/checkout" element={<Checkout cart={cart} clearCart={clearCart} />} />
         </Routes>
 
-        {/* Footer */}
+        {/* Scrollable sections for the rest of the pages */}
+        <div id="home">
+          <Home />
+        </div>
+
+        <div id="menu">
+          <Menu1 />
+        </div>
+
+        <div id="gallery">
+          <Gallery />
+        </div>
+        
+        <div id="reservation">
+          <BreakfastReservation />
+        </div>
+
+        <div id="aboutus">
+          <About />
+        </div>
+
+        <div id="contact">
+          <Contact />
+        </div>
+
+        {/* Footer - This will always be visible unless you want to hide it on specific pages */}
         <Footer />
       </div>
     </Router>

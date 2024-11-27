@@ -1,6 +1,14 @@
 import React from 'react';
+import '../App.css';
+import { useNavigate } from 'react-router-dom';
 
-function Cart({ cart }) {
+function Cart({ cart, clearCart }) {
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate('/checkout', { state: { cart } }); // Navigate to Checkout page
+  };
+
   return (
     <section className="cart py-5">
       <div className="container">
@@ -17,6 +25,9 @@ function Cart({ cart }) {
                 <p>Price: {item.price}₮</p>
               </div>
             ))}
+            <button className="btn btn-primary" onClick={handleCheckout}>
+              Proceed to Checkout
+            </button>
           </div>
         )}
       </div>

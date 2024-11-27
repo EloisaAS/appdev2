@@ -98,7 +98,6 @@ function Checkout({ cart, clearCart }) {
                 <p>Price: {item.price}₮</p>
               </div>
             ))}
-
             <div className="mt-4">
               <button className="btn btn-primary" onClick={handleCheckout}>
                 Proceed to Checkout
