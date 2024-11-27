@@ -740,7 +740,8 @@ h1, h2, h4 {
 }
 
 .contact-form-container h2 {
-  font-size: 1.5rem;
+  font-size: 36px;
+  color: #d6af6a;
   margin-bottom: 20px;
 }
 
