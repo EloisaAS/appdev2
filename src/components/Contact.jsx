@@ -40,24 +40,19 @@ function Contact() {
 
   return (
     <div className="contact-page">
+      <h2 className="contact-title">Contact Us</h2>
       <div className="contact-container">
         {/* Left Section: Hours and Services */}
         <div className="contact-info">
           <h2>Hours</h2>
-          <p>Monday: 7:00 AM - 10:00 PM</p>
-          <p>Tuesday: 7:00 AM - 10:00 PM</p>
-          <p>Wednesday: 7:00 AM - 10:00 PM</p>
-          <p>Thursday: 7:00 AM - 10:00 PM</p>
-          <p>Friday: 7:00 AM - 10:00 PM</p>
-          <p>Saturday: 7:00 AM - 10:00 PM</p>
-          <p>Sunday: 7:00 AM - 10:00 PM</p>
-          <p>______</p>
-
+          <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+          <p>Saturday - Sunday: 6:00 AM - 10:00 PM</p>
+          <hr />
           <h2>Services</h2>
           <ul>
             <li>Takeout</li>
             <li>Dine-in</li>
-            <li>Outdoor seating</li>
+            <li>Outdoor Seating</li>
             <li>Reservations</li>
           </ul>
         </div>

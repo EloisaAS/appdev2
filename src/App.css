@@ -693,39 +693,53 @@ h1, h2, h4 {
 }
 
 .contact-page {
+  padding: 40px 20px;
+  font-family: 'Playfair Display', serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 40px;
-  background: url('C:\Users\user\appdev2-2\src\images\coffee.jpg') no-repeat center center/cover; /* Background Image */
+  background: url('C:/Users/user/appdev2-2/src/images/coffee.jpg') no-repeat center center/cover; /* Background Image */
   color: #fff;
+  min-height:fit-content;
+}
+
+.contact-title {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #d6af6a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .contact-container {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
   max-width: 1200px;
   width: 100%;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.44);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
-/* Left Section: Info */
-.contact-info {
+.contact-info, .contact-form-container {
   flex: 1;
-  font-size: 1rem;
+  min-width: 300px;
 }
 
-.contact-info h2 {
-  font-size: 36px;
+.contact-info h2,
+.contact-form-container h2 {
+  font-size: 1.8rem;
   color: #d6af6a;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .contact-info p,
 .contact-info li {
+  font-size: 1rem;
+  line-height: 1.6;
   margin: 5px 0;
 }
 
@@ -734,37 +748,48 @@ h1, h2, h4 {
   padding: 0;
 }
 
-/* Right Section: Form */
-.contact-form-container {
-  flex: 1;
-}
-
-.contact-form-container h2 {
-  font-size: 36px;
+.contact-info ul li::before {
+  content: '•';
   color: #d6af6a;
-  margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 .contact-form-container .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #d6af6a;
 }
 
 .contact-form-container .form-control {
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 12px;
+  border-radius: 8px;
   font-size: 1rem;
-  border: none;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  outline: none;
+}
+
+.contact-form-container .form-control:focus {
+  border-color: #d6af6a;
+  box-shadow: 0 0 5px rgba(214, 175, 106, 0.5);
 }
 
 .contact-form-container .btn {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #e67e22;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .contact-form-container .btn:hover {
@@ -773,5 +798,14 @@ h1, h2, h4 {
 
 .status-message {
   margin-top: 10px;
+  font-size: 1rem;
   color: #4caf50;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

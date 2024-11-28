@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
-  background: url('C:\Users\user\appdev2-2\src\assets\inside.jpg') center/cover no-repeat fixed; 
+  background: url('C:\Users\segundo_e\appdev2\src\assets\inside.jpg') center/cover no-repeat fixed; 
   position: relative;
   color: #f8f8f8;
 }
@@ -21,7 +21,7 @@ body::before {
   max-width: 900px;
   margin: 50px auto;
   padding: 40px 20px;
-  background-color: rgba(219, 213, 213, 0.119); 
+  background-color: rgba(170, 168, 168, 0.329); 
   border-radius: 15px;
 }
 
@@ -31,15 +31,8 @@ body::before {
 }
 
 .reservation-header h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #b39283;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border-bottom: 2px solid #d6a48e;
-  display: inline-block;
-  padding-bottom: 5px;
+  font-weight: bold;
+  text-align: center !important;
 }
 
 .reservation-form {
@@ -108,7 +101,6 @@ select::placeholder {
 
 .confirmation {
   text-align: center;
-  background-color: #222;
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;

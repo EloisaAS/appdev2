@@ -48,7 +48,7 @@ function App() {
                 </li>
                 <li className="nav-item">
                   <ScrollLink className="nav-link" to="gallery" smooth={true} duration={500}>
-                    Gallery
+                    Our Cafe
                   </ScrollLink>
                 </li>
               </ul>
@@ -107,12 +107,12 @@ function App() {
           <Home />
         </div>
 
-        <div id="menu">
-          <Menu1 />
-        </div>
-
         <div id="gallery">
           <Gallery />
+        </div>
+
+        <div id="menu">
+          <Menu1 />
         </div>
         
         <div id="reservation">
