@@ -603,7 +603,7 @@ h1, h2, h4 {
 .footer {
   background-color: #f8f9fa;
   font-family: "Arial", sans-serif;
-  padding: 2rem 0;
+  padding: 2rem 1rem; /* Adjusted padding for smaller screens */
 }
 
 .footer .fw-bold {
@@ -617,8 +617,14 @@ h1, h2, h4 {
   margin: 0;
 }
 
+.footer .social-icons {
+  display: flex;
+  justify-content: center; /* Center social icons */
+  margin-top: 1rem; /* Add space above social icons */
+}
+
 .footer .social-icons .me-3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem; /* Increased icon size for better visibility */
   color: #d2691e;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -640,55 +646,36 @@ h1, h2, h4 {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    margin-left: 5px;
+  .footer .row {
+    flex-direction: column; /* Stack columns vertically */
+    text-align: center; /* Center text for smaller screens */
   }
 
-  .banner h1 {
-    font-size: 2.5rem;
-  }
-
-  .banner p.lead {
-    font-size: 1rem;
-  }
-
-  .service-box {
-    margin-bottom: 30px;
+  .footer .col-md-4 {
+    margin-bottom: 1.5rem; /* Add space between stacked items */
+    width: 100%; /* Ensure full width for smaller screens */
   }
 
   .footer h5 {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Adjust heading size */
   }
 
-  .footer .form-control {
-    width: 100%;
+  .footer p {
+    font-size: 0.9rem; /* Adjust paragraph size */
   }
 }
 
 @media (max-width: 480px) {
-  .navbar {
-    padding: 10px 0;
+  .footer .social-icons .me-3 {
+    font-size: 1.5rem; /* Increase icon size for smaller screens */
   }
 
-  .navbar-brand {
-    font-size: 1.2rem;
+  .footer h5 {
+    font-size: 1rem; /* Smaller heading size */
   }
 
-  .banner h1 {
-    font-size: 2rem;
-  }
-
-  .banner p.lead {
-    font-size: 0.9rem;
-  }
-
-  .service-box {
-    padding: 15px;
-  }
-
-  .footer .social-icons a {
-    font-size: 1.2rem;
+  .footer p.text-center {
+    font-size: 0.75rem; /* Smaller text for very small screens */
   }
 }
 

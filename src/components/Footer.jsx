@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer bg-light py-5">
       <div className="container">
-        <div className="row">
+        <div className="row text-center"> {/* Center all content */}
           {/* Logo Section */}
           <div className="col-md-4 mb-4">
             <h5 className="fw-bold">KO-CO CAFE</h5>
@@ -13,7 +13,7 @@ function Footer() {
           </div>
 
           {/* Contact Information */}
-          <div className="col-md-4 mb-4 text-center">
+          <div className="col-md-4 mb-4">
             <h6 className="fw-bold">HAVE QUESTIONS?</h6>
             <p>
               <FaEnvelope className="me-2" /> kococoffeeteamusic@gmail.com
@@ -24,15 +24,21 @@ function Footer() {
           </div>
 
           {/* Reservation Assistance Section */}
-          <div className="col-md-4 mb-4 text-end">
+          <div className="col-md-4 mb-4">
             <h6 className="fw-bold">NEED ASSISTANCE?</h6>
             <p>
               <FaPhoneAlt className="me-2" /> 0993 024 7430
             </p>
-            <div className="social-icons">
-              <FaTiktok className="me-3" />
-              <FaFacebookF className="me-3" />
-              <FaInstagram className="me-3"/>
+            <div className="social-icons d-flex justify-content-center">
+              <a href="https://www.tiktok.com/@kococafe?_t=8rhkMoN7MPg&_r=1" target="_blank" rel="noopener noreferrer">
+                <FaTiktok className="me-3" />
+              </a>
+              <a href="https://www.facebook.com/koco.coffeeteamusic/" target="_blank" rel="noopener noreferrer">
+                <FaFacebookF className="me-3" />
+              </a>
+              <a href="https://www.instagram.com/koco.coffeeteamusic?igsh=bnA1MDZiOGhqejd6" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="me-3" />
+              </a>
             </div>
           </div>
         </div>
